@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.e.visitormanagement">
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <dist:module dist:instant="true" />
+    <application
+        android:name="com.e.ifazig.visitormanagement.utility.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:readPermission="${applicationId}.provider.READ"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/picker_provider_paths"
+                tools:replace="android:resource" />
+        </provider>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.e.ifazig.visitormanagement.activity.ImageUploadActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.e.ifazig.visitormanagement.activity.VisitorDetailsActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" /><activity
+            android:name="com.e.ifazig.visitormanagement.activity.ThankYouActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.e.ifazig.visitormanagement.activity.PurposeDetailsActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.e.ifazig.visitormanagement.activity.HomeVisitorActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.e.ifazig.visitormanagement.activity.SelectVisitorActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.e.ifazig.visitormanagement.activity.HomeActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.e.ifazig.visitormanagement.activity.SettingsSetup"
+            android:screenOrientation="landscape"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.e.ifazig.visitormanagement.activity.LoginActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.e.ifazig.visitormanagement.activity.SplashActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:readPermission="${applicationId}.provider.READ"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/picker_provider_paths"
+                tools:replace="android:resource" />
+        </provider>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+    </application>
+
+
+
+</manifest>

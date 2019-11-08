@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e6eafc</color>
+    <color name="colorPrimaryDark">#e6eafc</color>
+    <color name="colorAccent">#072740</color>
+    <color name="yellow">#ffcc04</color>
+    <color name="splash_color">#072740</color>;
+    <color name="toast_color">#71c5d9</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="textcolor">#222222</color>
+    <color name="cementcolor">#ECEEF1</color>
+    <color name="divider">#F8F7F7</color>
+    <color name="transparent">#00000000</color>
+    <color name="buttoncolor">#1d1e1d</color>
+    <color name="selected_color">#2CD2FF</color>
+    <color name="black_trans">#30000000</color>
+    <color name="blackTransparent">#99000000</color>
+    <color name="trans">#00000000 </color>.
+    <color name="blackLightTransparent">#99CAC6C6</color>
+    <color name="green">#009933</color>
+</resources>
