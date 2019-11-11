@@ -77,10 +77,11 @@ public class PurposeDetailsActivity extends AppCompatActivity implements View.On
                             if(employeeDetails!=null&&employeeDetails.size()>0){
                                 EmployeeListAdapter adapter = new EmployeeListAdapter(PurposeDetailsActivity.this, R.layout.activity_purpose_details, R.id.lbl_name, employeeDetails, new EmployeeOnClick() {
                                     @Override
-                                    public void onClick(Integer empId,String empName) {
+                                    public void onClick(Integer empId,String empName,String phoneno) {
                                         //Toast.makeText(PurposeDetailsActivity.this, ""+empId, Toast.LENGTH_SHORT).show();
                                         employeeId=empId;
                                         SessionManager.getInstance().insertIntoPreference(PurposeDetailsActivity.this,SharedPrefConstants.MEETING_PERSON_NAME,empName);
+                                        SessionManager.getInstance().insertIntoPreference(PurposeDetailsActivity.this,SharedPrefConstants.MEETER_PERSON_NUMBER,phoneno);
                                     }
                                 });
                                 binding.edemployee.setAdapter(adapter);
@@ -90,7 +91,7 @@ public class PurposeDetailsActivity extends AppCompatActivity implements View.On
                             if(purposeofVisitDetails!=null&&purposeofVisitDetails.size()>0){
                                 PurposeListAdapter adapter = new PurposeListAdapter(PurposeDetailsActivity.this, R.layout.activity_purpose_details, R.id.lbl_name, purposeofVisitDetails, new PurposeOnClick() {
                                     @Override
-                                    public void onClick(Integer purpoID,String empphono) {
+                                    public void onClick(Integer purpoID) {
                                         //Toast.makeText(PurposeDetailsActivity.this, ""+purposeID, Toast.LENGTH_SHORT).show();
                                         purposeID=purpoID;
                                     }

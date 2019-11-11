@@ -9,7 +9,7 @@ public class SharedPrefConstants {
 
 
     // user details
-    public static final String MEETING_PERSON_NAME = "_pref_visitor_name";
+    public static final String MEETING_PERSON_NAME = "_pref_meeting_person_name";
     public static final String VISITOR_NAME = "_pref_visitor_name";
     public static final String USER_NAME = "_pref_user_name";
     public static final String EMAIL = "_pref_email";

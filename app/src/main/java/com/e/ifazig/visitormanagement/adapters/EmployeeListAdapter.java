@@ -71,7 +71,7 @@ public class EmployeeListAdapter extends ArrayAdapter<GetEmployeePurposeDetailsA
         view.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                employeeOnClick.onClick(people.getEmployeeId(),people.getEmployeeName());
+                employeeOnClick.onClick(people.getEmployeeId(),people.getEmployeeName(),people.getPhoneNo());
                 return false;
             }
         });

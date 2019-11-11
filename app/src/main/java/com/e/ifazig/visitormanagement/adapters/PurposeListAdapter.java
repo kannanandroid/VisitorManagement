@@ -50,7 +50,7 @@ public class PurposeListAdapter extends ArrayAdapter<GetEmployeePurposeDetailsAp
         view.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                purposeOnClick.onClick(people.getPurposeId(),people.getCDate());
+                purposeOnClick.onClick(people.getPurposeId());
                 return false;
             }
         });

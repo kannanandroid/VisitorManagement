@@ -43,9 +43,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
-        //String pwdby = "\u00A9" + year + ". All rights reserved.\n \t\t\t  www.ifazig.com \n \t\t\t\t Version " + versionName;
-        String ss = "Version" + versionName + "\n \t Release Date: Oct22, 2019 \n \t  www.ifazig.com \n" + "\u00A9" + year + ". All rights reserved.";
-        //binding.tvcopyrights.setText(ss);
+        String pwdby = "\u00A9" + year + ". All rights reserved.\n \t\t\t  www.ifazig.com \n \t\t\t\t Version " + versionName;
+        String ss = "Version" + versionName + "\n \t Release Date: Nov11 2019 \n \t  www.ifazig.com \n" + "\u00A9" + year + ". All rights reserved.";
+        binding.tvcopyrights.setText("Powered by iFaziG" + " "+ ss);
     }
 
     @Override

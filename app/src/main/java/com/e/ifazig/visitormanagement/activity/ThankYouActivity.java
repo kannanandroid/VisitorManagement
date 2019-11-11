@@ -31,8 +31,8 @@ public class ThankYouActivity extends AppCompatActivity {
     private void initView() {
         binding.txtthankmsg.setText(SessionManager.getInstance().getFromPreference(SharedPrefConstants.MEETING_PERSON_NAME) + " ," + "will reach you asap. Have a nice day!");
 
-        //callVisitorApi();
-        LoadHome();
+        callVisitorApi();
+        //LoadHome();
     }
 
     void LoadHome() {
@@ -49,8 +49,8 @@ public class ThankYouActivity extends AppCompatActivity {
     // visitor api call
     private void callVisitorApi() {
         CommonApiCalls.getInstance().sendVisitorSMSDetails(ThankYouActivity.this, "6y5s4psty07o79lw1k1149m7h12168", "sms",
-                "hi",
-                "9043474691",
+                "Your visitor entry is accepted" +" "+SessionManager.getInstance().getFromPreference(SharedPrefConstants.MEETING_PERSON_NAME)+" will meet you shortly",
+                SessionManager.getInstance().getFromPreference(SharedPrefConstants.VISITOR_NUMBER),
                 "IFAZIG", new CommonCallback.Listener() {
                     @Override
                     public void onSuccess(Object object) {
@@ -73,14 +73,15 @@ public class ThankYouActivity extends AppCompatActivity {
     // meeter
     private void callVisitingApi() {
         CommonApiCalls.getInstance().sendVisitorSMSDetails(ThankYouActivity.this, "6y5s4psty07o79lw1k1149m7h12168", "sms",
-                "good morning",
-                "9597212785",
+                "This is to inform you"+" "+SessionManager.getInstance().getFromPreference(SharedPrefConstants.VISITOR_NAME)+" is waiting to meet you at Reception.",
+                SessionManager.getInstance().getFromPreference(SharedPrefConstants.MEETER_PERSON_NUMBER),
                 "IFAZIG", new CommonCallback.Listener() {
                     @Override
                     public void onSuccess(Object object) {
                         SMSApiResponse body = (SMSApiResponse) object;
                         if (body.getStatus().equalsIgnoreCase("OK")) {
-
+                            ActivityCompat.finishAffinity(ThankYouActivity.this);
+                            CommonFunctions.getInstance().newIntent(ThankYouActivity.this, HomeActivity.class, Bundle.EMPTY, true);
                         } else {
                             CommonFunctions.getInstance().successResponseToast(ThankYouActivity.this, body.getMessage());
                         }
