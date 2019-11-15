@@ -16,12 +16,13 @@ import com.e.visitormanagement.databinding.ActivityCategoryHomeBinding;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     ActivityCategoryHomeBinding binding;
     private String userID;
-    private String companyID;
+    private String companyName;
     private String locationID;
     private String buildingID;
     private String settingsetuppage = "0";
     public static HomeActivity tempHomeActivity;
     Boolean doubleBackToExitPressedOnce = false;
+    private String companyID;
 
 
     @Override
@@ -33,12 +34,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             if (settingsetuppage != null && !settingsetuppage.isEmpty()) {
                 if (settingsetuppage.equalsIgnoreCase("1")) {
                     userID = getIntent().getExtras().getString("USERID");
+                    companyName = getIntent().getExtras().getString("COMPANYNAME");
                     companyID = getIntent().getExtras().getString("COMPANYID");
                     locationID = getIntent().getExtras().getString("LOCATIONID");
                     buildingID = getIntent().getExtras().getString("BUILDINGID");
                     SessionManager.getInstance().Logout();
                     SessionManager.getInstance().insertIntoPreference(HomeActivity.this, SharedPrefConstants.USERID, userID);
                     SessionManager.getInstance().insertIntoPreference(HomeActivity.this, SharedPrefConstants.COMPANYID, companyID);
+                    SessionManager.getInstance().insertIntoPreference(HomeActivity.this, SharedPrefConstants.COMPANYNAME, companyName);
                     SessionManager.getInstance().insertIntoPreference(HomeActivity.this, SharedPrefConstants.LOCATIONID, locationID);
                     SessionManager.getInstance().insertIntoPreference(HomeActivity.this, SharedPrefConstants.BUILDINGID, buildingID);
 

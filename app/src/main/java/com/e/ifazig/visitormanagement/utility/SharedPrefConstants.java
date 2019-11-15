@@ -18,6 +18,7 @@ public class SharedPrefConstants {
 
     public static final String USERID = "_pref_user_id";
     public static final String COMPANYID = "_pref_company_id";
+    public static final String COMPANYNAME = "_pref_company_Name";
     public static final String LOCATIONID = "_pref_location_id";
     public static final String BUILDINGID = "_pref_building_id";
 

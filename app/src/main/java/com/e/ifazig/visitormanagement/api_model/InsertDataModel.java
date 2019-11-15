@@ -8,6 +8,9 @@ import java.util.List;
 
 public class InsertDataModel {
 
+    @SerializedName("demoval")
+    @Expose
+    private String demoval;
     @SerializedName("eVisitors")
     @Expose
     private List<EVisitor> eVisitors = new ArrayList<EVisitor>();
@@ -30,6 +33,15 @@ public class InsertDataModel {
     public void setTVisiting(List<TVisiting> tVisiting) {
         this.tVisiting = tVisiting;
     }
+
+    public String getDemoval() {
+        return demoval;
+    }
+
+    public void setDemoval(String demoval) {
+        this.demoval = demoval;
+    }
+
     public static class EVisitor {
 
         @SerializedName("VisitorsId")
@@ -127,6 +139,9 @@ public class InsertDataModel {
         @SerializedName("VisitId")
         @Expose
         private Integer visitId;
+        @SerializedName("UserID")
+        @Expose
+        private Integer UserID;
         @SerializedName("VisitorId")
         @Expose
         private Integer visitorId;
@@ -224,6 +239,13 @@ public class InsertDataModel {
             this.outTime = outTime;
         }
 
+        public Integer getUserID() {
+            return UserID;
+        }
+
+        public void setUserID(Integer userID) {
+            UserID = userID;
+        }
     }
 }
 

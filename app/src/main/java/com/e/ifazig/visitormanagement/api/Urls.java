@@ -1,12 +1,17 @@
 package com.e.ifazig.visitormanagement.api;
 
-class Urls {
+public class Urls {
     static final String BASE_URL = "http://uatifazig.com/i2iRestAPI/api/";// UAT url
     static final String SMS_URL = "https://api-alerts.kaleyra.com/v4/";// UAT url
-    // api urls
 
+
+    // project details
+    public static final String TOOLID = "101";
+    public static final String DEMOVAL = "10";
+
+    // api urls
     // User details
-    static final String LOGIN = "Login";
+    static final String LOGIN = "LoginWithUserValidity";
     static final String FORGOTPASSWORD = "ForgotPassword";
 
 

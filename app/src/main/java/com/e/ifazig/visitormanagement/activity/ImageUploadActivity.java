@@ -20,6 +20,7 @@ import android.view.View;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.e.ifazig.visitormanagement.api.CommonApiCalls;
+import com.e.ifazig.visitormanagement.api.Urls;
 import com.e.ifazig.visitormanagement.api_model.FileuploadApiResponse;
 import com.e.ifazig.visitormanagement.api_model.InsertComplaintApiResponse;
 import com.e.ifazig.visitormanagement.api_model.InsertDataModel;
@@ -124,6 +125,7 @@ public class ImageUploadActivity extends AppCompatActivity implements View.OnCli
             case R.id.rl_Okay:
                 if(imageLocation!=null&&!imageLocation.isEmpty()){
                     InsertDataModel insertDataModel = new InsertDataModel();
+                    insertDataModel.setDemoval(Urls.DEMOVAL);
 
                     // visitor details
 
@@ -149,6 +151,7 @@ public class ImageUploadActivity extends AppCompatActivity implements View.OnCli
                     mTVisiting.setVisitorId(0);
                     mTVisiting.setEmployeeId(employeeId);
                     mTVisiting.setPurposeId(purposeID);
+                    mTVisiting.setUserID(Integer.valueOf(SessionManager.getInstance().getFromPreference(SharedPrefConstants.USERID)));
                     mTVisiting.setCompanyId(Integer.valueOf(SessionManager.getInstance().getFromPreference(SharedPrefConstants.COMPANYID)));
                     mTVisiting.setLocationId(Integer.valueOf(SessionManager.getInstance().getFromPreference(SharedPrefConstants.LOCATIONID)));
                     mTVisiting.setBuildingId(Integer.valueOf(SessionManager.getInstance().getFromPreference(SharedPrefConstants.BUILDINGID)));
@@ -190,6 +193,7 @@ public class ImageUploadActivity extends AppCompatActivity implements View.OnCli
                             FileuploadApiResponse fileuploadApiResponse = (FileuploadApiResponse) object;
                             if (fileuploadApiResponse.getStatus()) {
                                 InsertDataModel insertDataModel = new InsertDataModel();
+                                insertDataModel.setDemoval(Urls.DEMOVAL);
 
                                 // visitor details
 
@@ -215,6 +219,7 @@ public class ImageUploadActivity extends AppCompatActivity implements View.OnCli
                                 mTVisiting.setVisitorId(0);
                                 mTVisiting.setEmployeeId(employeeId);
                                 mTVisiting.setPurposeId(purposeID);
+                                mTVisiting.setUserID(Integer.valueOf(SessionManager.getInstance().getFromPreference(SharedPrefConstants.USERID)));
                                 mTVisiting.setCompanyId(Integer.valueOf(SessionManager.getInstance().getFromPreference(SharedPrefConstants.COMPANYID)));
                                 mTVisiting.setLocationId(Integer.valueOf(SessionManager.getInstance().getFromPreference(SharedPrefConstants.LOCATIONID)));
                                 mTVisiting.setBuildingId(Integer.valueOf(SessionManager.getInstance().getFromPreference(SharedPrefConstants.BUILDINGID)));

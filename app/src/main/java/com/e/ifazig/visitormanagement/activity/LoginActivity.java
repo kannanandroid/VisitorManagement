@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.e.ifazig.visitormanagement.api.CommonApiCalls;
+import com.e.ifazig.visitormanagement.api.Urls;
 import com.e.ifazig.visitormanagement.api_model.LoginApiResponseModel;
 import com.e.ifazig.visitormanagement.callback.CommonCallback;
 import com.e.ifazig.visitormanagement.utility.CommonFunctions;
@@ -44,8 +45,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
         String pwdby = "\u00A9" + year + ". All rights reserved.\n \t\t\t  www.ifazig.com \n \t\t\t\t Version " + versionName;
-        String ss = "Version" + versionName + "\n \t Release Date: Nov11 2019 \n \t  www.ifazig.com \n" + "\u00A9" + year + ". All rights reserved.";
-        binding.tvcopyrights.setText("Powered by iFaziG" + " "+ ss);
+        String ss = "Version" + versionName + "\n \t Release Date: Nov12 2019 \n \t  www.ifazig.com \n" + "\u00A9" + year + ". All rights reserved.";
+        binding.tvcopyrights.setText("Powered by iFaziG" + " " + ss);
     }
 
     @Override
@@ -61,9 +62,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     return;
                 }
                 // call login api
-                callLoginApi(binding.edEmail.getText().toString().trim(), binding.edPassword.getText().toString().trim());
+                //
+                callLoginApi(binding.edEmail.getText().toString().trim(), binding.edPassword.getText().toString().trim(),Urls.TOOLID,Urls.DEMOVAL);
                 break;
-                case R.id.ivbackArrow:
+            case R.id.ivbackArrow:
                 finish();
                 break;
 
@@ -76,9 +78,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
      * @param email
      * @param password
      */
-    private void callLoginApi(String email, String password) {
+    private void callLoginApi(String email, String password,String toolid,String demoval) {
         CommonApiCalls.getInstance().getLoginDetails(LoginActivity.this, email,
-                password, new CommonCallback.Listener() {
+                password, toolid,demoval , new CommonCallback.Listener() {
                     @Override
                     public void onSuccess(Object object) {
                         LoginApiResponseModel body = (LoginApiResponseModel) object;

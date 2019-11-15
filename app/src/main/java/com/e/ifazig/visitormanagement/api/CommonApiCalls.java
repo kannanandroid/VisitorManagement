@@ -40,13 +40,13 @@ public class CommonApiCalls {
      * @param password
      * @param listener
      */
-    public void getLoginDetails(final Context context, String emailid, String password, final CommonCallback.Listener listener) {
+    public void getLoginDetails(final Context context, String emailid, String password, String toolId,String demoVal,final CommonCallback.Listener listener) {
 
         if (!CustomProgressDialog.getInstance().isShowing()) {
             CustomProgressDialog.getInstance().show(context, "", "");
         }
         ApiInterface apiInterface = ApiConfiguration.getInstance().getApiBuilder().create(ApiInterface.class);
-        Call<LoginApiResponseModel> call = apiInterface.login(emailid, password);
+        Call<LoginApiResponseModel> call = apiInterface.login(emailid, password,toolId,demoVal);
         call.enqueue(new Callback<LoginApiResponseModel>() {
             @Override
             public void onResponse(Call<LoginApiResponseModel> call, Response<LoginApiResponseModel> response) {

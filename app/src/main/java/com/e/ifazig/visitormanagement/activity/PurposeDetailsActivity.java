@@ -123,7 +123,7 @@ public class PurposeDetailsActivity extends AppCompatActivity implements View.On
                     return;
                 }
                 if(employeeId==0) {
-                    CommonFunctions.getInstance().validationEmptyError(PurposeDetailsActivity.this, LanguageConstants.selectatlestone);
+                    CommonFunctions.getInstance().validationEmptyError(PurposeDetailsActivity.this, LanguageConstants.employeenotfound);
                     return;
                 }
                 if(binding.edpurpose.getText().toString().trim().isEmpty()){
@@ -131,7 +131,7 @@ public class PurposeDetailsActivity extends AppCompatActivity implements View.On
                     return;
                 }
                 if(purposeID==0) {
-                    CommonFunctions.getInstance().validationEmptyError(PurposeDetailsActivity.this, LanguageConstants.selectatlestone);
+                    CommonFunctions.getInstance().validationEmptyError(PurposeDetailsActivity.this, LanguageConstants.purposenotfound);
                     return;
                 }
                     Bundle bundle = new Bundle();

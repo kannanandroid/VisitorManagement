@@ -49,7 +49,8 @@ public class ThankYouActivity extends AppCompatActivity {
     // visitor api call
     private void callVisitorApi() {
         CommonApiCalls.getInstance().sendVisitorSMSDetails(ThankYouActivity.this, "6y5s4psty07o79lw1k1149m7h12168", "sms",
-                "Your visitor entry is accepted" +" "+SessionManager.getInstance().getFromPreference(SharedPrefConstants.MEETING_PERSON_NAME)+" will meet you shortly",
+                "Welcome to"+" "+SessionManager.getInstance().getFromPreference(SharedPrefConstants.COMPANYNAME)+","+" We have informed your host" +" "+ SessionManager.getInstance().getFromPreference(SharedPrefConstants.MEETING_PERSON_NAME)+"  about your arrival.\n" +
+                        "Have a great day!",
                 SessionManager.getInstance().getFromPreference(SharedPrefConstants.VISITOR_NUMBER),
                 "IFAZIG", new CommonCallback.Listener() {
                     @Override
@@ -73,7 +74,7 @@ public class ThankYouActivity extends AppCompatActivity {
     // meeter
     private void callVisitingApi() {
         CommonApiCalls.getInstance().sendVisitorSMSDetails(ThankYouActivity.this, "6y5s4psty07o79lw1k1149m7h12168", "sms",
-                "This is to inform you"+" "+SessionManager.getInstance().getFromPreference(SharedPrefConstants.VISITOR_NAME)+" is waiting to meet you at Reception.",
+                SessionManager.getInstance().getFromPreference(SharedPrefConstants.VISITOR_NAME)+" is waiting for you at Reception.",
                 SessionManager.getInstance().getFromPreference(SharedPrefConstants.MEETER_PERSON_NUMBER),
                 "IFAZIG", new CommonCallback.Listener() {
                     @Override

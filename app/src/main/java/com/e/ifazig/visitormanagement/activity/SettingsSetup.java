@@ -30,6 +30,7 @@ public class SettingsSetup extends AppCompatActivity implements View.OnClickList
     private String userID;
     private String locationID;
     private String companyID;
+    private String companyName;
     private String buildingID;
 
 
@@ -111,6 +112,7 @@ public class SettingsSetup extends AppCompatActivity implements View.OnClickList
         Bundle bundle = new Bundle();
         bundle.putString("USERID", userID);
         bundle.putString("COMPANYID", companyID);
+        bundle.putString("COMPANYNAME", companyName);
         bundle.putString("LOCATIONID", locationID);
         bundle.putString("BUILDINGID", buildingID);
         bundle.putString("SETTINGSETUPPAGE", "1");
@@ -228,6 +230,7 @@ public class SettingsSetup extends AppCompatActivity implements View.OnClickList
                             binding.tvCompany.setText(mSpinnerModels.get(position).getName());
                             binding.tvCompany.setTag(mSpinnerModels.get(position).getId());
                             companyID = mSpinnerModels.get(position).getId();
+                            companyName = mSpinnerModels.get(position).getName();
 
                         }
                     });

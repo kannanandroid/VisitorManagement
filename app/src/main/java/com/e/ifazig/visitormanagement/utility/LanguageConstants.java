@@ -97,6 +97,8 @@ public class LanguageConstants {
     public static String numbersOnly="Enter numbers only";
     public static String smileplease="Smile Please";
     public static String signinme="Looks good! Signin me";
+    public static String employeenotfound="Employee not found";
+    public static String purposenotfound="Purpose of visit not found";
 
 
 }

@@ -28,7 +28,9 @@ public interface ApiInterface {
 
     @GET(Urls.LOGIN)
     Call<LoginApiResponseModel> login(@Query("UserName") String email,
-                                      @Query("Password") String password);
+                                      @Query("Password") String password,
+                                      @Query("ToolId") String ToolId,
+                                      @Query("demoVal") String demoVal);
 
     @GET(Urls.FORGOTPASSWORD)
     Call<LoginApiResponseModel> forgotPassword(@Query("username") String email);
